@@ -6,6 +6,7 @@
 img{
 	max-width: 100%;
     display: block;
+    height: auto;
 }
 
 body{
@@ -75,19 +76,65 @@ button{
     color: #00a1ff;
 }
 
+.hexagono--externo{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: auto;
+    aspect-ratio: 90 / 78;
+    filter: drop-shadow(0 0 3px #00a1ff);
+}
+
 .hexagono{
-    max-width: 53px;
-    background-color: #141213;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1a1b;
     border-radius: 7.5px;
-    padding: 12.5px;
-    box-shadow: 0 0 7.5px 0px #00a1ff, inset 0 0 2.5px 0px #005080;
-    border: 3px solid #262427;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     
 }
 
-/* SEÇÃO HERO */
+.hexagono--interno{
+    width: 92.5%;
+    height: 92.5%;
+    background-color: #050505;
+}
+
+.hexagono--superior img{
+    width: 60%;
+}
+
+.hexagono img{
+    width: 50%;
+}
+
+.hexagono--superior{
+    top: 0;
+    left: 50%;
+    width: 90px;
+}
+
+.hexagono--lateral{
+    left: 0;
+    top: 50%;
+}
+
+.passos,
+.temas{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 20px;
+    font-size: 18px;
+}
+
+/* HERO */
 
 .card{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +142,7 @@ button{
     background-color: #050505;
     box-shadow: 0 0 25px 5px #00a1ff;
     padding: 30px 40px;
+    padding-top: 55px;
     border-radius: 25px;
     max-width: 50%;
     font-size: 18px;
@@ -161,13 +209,8 @@ li img{
     color: #7c7f7f;
 }
 
-/* PASSO A PASSO */
-.passos{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 18px;
-}
+/* PASSO */
+
 
 .passo{
     display: flex;
@@ -180,7 +223,7 @@ li img{
 
 .passo .passo__icone{
     max-width: 53px;
-    background-color: #141213;
+    background-color: #1d1a1b;
     border-radius: 7.5px;
     padding: 12.5px;
     box-shadow: 0 0 7.5px 0px #00a1ff, inset 0 0 2.5px 0px #005080;
@@ -207,15 +250,11 @@ li img{
     background-color: #000618;
  }
 
- .temas{
-    font-size: 18px;
-    align-self: stretch;
- }
-
  .tema{
+    position: relative;
     background-color: #050505;
     border-radius: 10px;
-    padding: 25px 60px;
+    padding: 30px 60px;
     box-shadow: 0 0 7.5px 0px #00a1ff;
  }
 
